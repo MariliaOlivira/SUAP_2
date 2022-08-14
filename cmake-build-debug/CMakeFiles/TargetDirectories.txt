@@ -1,0 +1,3 @@
+/home/marilia/Projetos/SUAP_2/cmake-build-debug/CMakeFiles/SUAP_2.dir
+/home/marilia/Projetos/SUAP_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/marilia/Projetos/SUAP_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
