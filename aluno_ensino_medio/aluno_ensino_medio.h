@@ -7,7 +7,7 @@
 #include <string>
 #include "aluno.h"
 using std::string;
-#include "../email_academico/email_academico.h"
+
 
 class aluno_ensino_medio : public aluno {
 public:

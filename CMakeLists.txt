@@ -20,4 +20,4 @@ add_executable(novo_SUAP_2
         materia/materia.h
         boletim/boletim.cpp
         boletim/boletim.h
-        main.cpp cursos/cursos.cpp cursos/cursos.h email_academico/email_academico.cpp email_academico/email_academico.h)
+        main.cpp cursos/cursos.cpp cursos/cursos.h  aluno/aluno.cpp)

@@ -6,9 +6,11 @@
 #define NOVO_SUAP_2_MATERIA_H
 #include "../professor/professor.h"
 #include <string>
+using std::ostream;
 using std::string;
 
-class materia {
+class materia{
+    friend ostream &operator<<(ostream &out, materia &materia);
 public:
     string nome_materia;
     professor professor_responsavel;
@@ -23,7 +25,7 @@ public:
     explicit materia(){;}
 
 //    métodos
-    int retorna_resultado(){}
+    void retorna_resultado(){}
 };
 
 #endif //NOVO_SUAP_2_MATERIA_H

@@ -1,8 +1,7 @@
 //
-// Created by marilia on 18/08/22.
+// Created by marilia on 21/08/22.
 //
-
-#include "email_academico.h"
+#include "aluno.h"
 #include <vector>
 #include <string>
 using std::string;
@@ -22,9 +21,8 @@ std::vector<std::string> split(const std::string& text, char sep){
 }
 
 
-string email_academico::cria_email_academico(const string &nome)  {
-    string resultado;
-    resultado = split(nome, ' ')[0];
-    string nome_aluno(resultado);
+string aluno::cria_email_academico(string nome)  {
+    nome = split(nome, ' ')[0];
+    string nome_aluno(nome);
     return nome_aluno += "@academico.suap2.com.br";
 }

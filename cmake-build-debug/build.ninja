@@ -98,12 +98,12 @@ build CMakeFiles/novo_SUAP_2.dir/cursos/cursos.cpp.o: CXX_COMPILER__novo_SUAP_2_
   OBJECT_DIR = CMakeFiles/novo_SUAP_2.dir
   OBJECT_FILE_DIR = CMakeFiles/novo_SUAP_2.dir/cursos
 
-build CMakeFiles/novo_SUAP_2.dir/email_academico/email_academico.cpp.o: CXX_COMPILER__novo_SUAP_2_Debug /home/marilia/Projetos/novo_SUAP_2/email_academico/email_academico.cpp || cmake_object_order_depends_target_novo_SUAP_2
-  DEP_FILE = CMakeFiles/novo_SUAP_2.dir/email_academico/email_academico.cpp.o.d
+build CMakeFiles/novo_SUAP_2.dir/aluno/aluno.cpp.o: CXX_COMPILER__novo_SUAP_2_Debug /home/marilia/Projetos/novo_SUAP_2/aluno/aluno.cpp || cmake_object_order_depends_target_novo_SUAP_2
+  DEP_FILE = CMakeFiles/novo_SUAP_2.dir/aluno/aluno.cpp.o.d
   FLAGS = -g
   INCLUDES = -I/home/marilia/Projetos/novo_SUAP_2/aluno -I/home/marilia/Projetos/novo_SUAP_2/aluno_ensino_medio
   OBJECT_DIR = CMakeFiles/novo_SUAP_2.dir
-  OBJECT_FILE_DIR = CMakeFiles/novo_SUAP_2.dir/email_academico
+  OBJECT_FILE_DIR = CMakeFiles/novo_SUAP_2.dir/aluno
 
 
 # =============================================================================
@@ -113,7 +113,7 @@ build CMakeFiles/novo_SUAP_2.dir/email_academico/email_academico.cpp.o: CXX_COMP
 #############################################
 # Link the executable novo_SUAP_2
 
-build novo_SUAP_2: CXX_EXECUTABLE_LINKER__novo_SUAP_2_Debug CMakeFiles/novo_SUAP_2.dir/aluno_ensino_medio/aluno_ensino_medio.cpp.o CMakeFiles/novo_SUAP_2.dir/aluno_superior/aluno_superior.cpp.o CMakeFiles/novo_SUAP_2.dir/materia/materia.cpp.o CMakeFiles/novo_SUAP_2.dir/professor/professor.cpp.o CMakeFiles/novo_SUAP_2.dir/boletim/boletim.cpp.o CMakeFiles/novo_SUAP_2.dir/main.cpp.o CMakeFiles/novo_SUAP_2.dir/cursos/cursos.cpp.o CMakeFiles/novo_SUAP_2.dir/email_academico/email_academico.cpp.o
+build novo_SUAP_2: CXX_EXECUTABLE_LINKER__novo_SUAP_2_Debug CMakeFiles/novo_SUAP_2.dir/aluno_ensino_medio/aluno_ensino_medio.cpp.o CMakeFiles/novo_SUAP_2.dir/aluno_superior/aluno_superior.cpp.o CMakeFiles/novo_SUAP_2.dir/materia/materia.cpp.o CMakeFiles/novo_SUAP_2.dir/professor/professor.cpp.o CMakeFiles/novo_SUAP_2.dir/boletim/boletim.cpp.o CMakeFiles/novo_SUAP_2.dir/main.cpp.o CMakeFiles/novo_SUAP_2.dir/cursos/cursos.cpp.o CMakeFiles/novo_SUAP_2.dir/aluno/aluno.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/novo_SUAP_2.dir
   POST_BUILD = :
