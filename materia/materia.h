@@ -12,6 +12,7 @@ using std::string;
 class materia{
     friend ostream &operator<<(ostream &out, materia &materia);
 public:
+
     string nome_materia;
     professor professor_responsavel;
     int carga_horaria;

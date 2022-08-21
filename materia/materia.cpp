@@ -8,11 +8,11 @@ using std::ostream;
 using std::endl;
 
 ostream &operator<<(ostream &out, materia &materia) {
-    out << "____________________________________" << endl <<
-        "Ma referente: " << materia.nome_materia << endl <<
+    out << "\t\t____________________________________" << endl <<
+        "Materias referente: " << materia.nome_materia << endl <<
         "Professor Responsavel: " << materia.professor_responsavel.nome_professor << endl <<
-        "Carga Horaria" << materia.carga_horaria << endl <<
-        "____________________________________" << endl;
+        "Carga Horaria: " << materia.carga_horaria << "h"<<endl <<
+        "\t\t____________________________________" << endl;
 
     return out;
 }

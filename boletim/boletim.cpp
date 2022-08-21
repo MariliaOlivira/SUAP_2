@@ -7,6 +7,7 @@
 #include <iostream>
 #include "../materia/materia.h"
 using std::string;
+using std::endl;
 
 int boletim::resultado_final(materia materia_nova) {
     float resultado = (materia_nova.nota1 + materia_nova.nota2 + materia_nova.nota3)/3;
@@ -16,8 +17,8 @@ int boletim::resultado_final(materia materia_nova) {
 
 
 void boletim::print_boletim() {
-    auto list = this->materias;
-    for (auto & it : list)
+    std::cout << "----------------- Matérias Cadastradas -------------------"<< endl;
+    for (auto & it : this->materias)
         std::cout << it << "\n";
 }
 
