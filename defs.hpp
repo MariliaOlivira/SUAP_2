@@ -6,8 +6,9 @@
 #define NOVO_SUAP_2_DEFS_H
 #include "includes.h"
 #include <iostream>
+#include <fstream>
 
-void adiciona_profesor(){
+void adiciona_profesor(const string &nome, string email){
 
 }
 #endif //NOVO_SUAP_2_DEFS_H

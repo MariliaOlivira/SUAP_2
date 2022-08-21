@@ -26,3 +26,9 @@ string aluno::cria_email_academico(string nome)  {
     string nome_aluno(nome);
     return nome_aluno += "@academico.suap2.com.br";
 }
+
+ostream &operator<<(ostream &os, const aluno& a) {
+    os << a.nome_aluno<<"\n";
+    os <<a.data_nascimento_aluno;
+
+}

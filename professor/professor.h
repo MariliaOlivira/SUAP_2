@@ -9,7 +9,7 @@ using std::string;
 
 class professor {
 public:
-    professor() { }
+    professor() = default;
     std::string nome_professor;
     std::string email;
 };

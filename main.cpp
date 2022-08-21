@@ -5,9 +5,10 @@
 using std::cout;
 using std::endl;
 using std::cin;
-
+#include <fstream>
 
 int main(){
+
 //    criando um curso
     cursos engenharia_da_computacao;
     engenharia_da_computacao.nome_curso = "engenharia_da_computação";
@@ -65,6 +66,21 @@ int main(){
         case 0:
             cout<< "oxe";
             break;
+        case 1:
+            cout<< "oxe";
+            break;
+        case 2:
+            cout<< "oxe";
+            break;
+        case 3:
+            cout<< "oxe";
+            break;
+        case 4:
+            cout<< "oxe";
+            break;
+        case 5:
+            cout<< "oxe";
+            break;
     }
 
 
@@ -85,4 +101,3 @@ int main(){
 
     return 0;
 }
-
