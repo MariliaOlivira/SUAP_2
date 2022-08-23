@@ -32,10 +32,72 @@ void cria_aluno_superior(materia materia ){
     boletim alana;
     alana.materias.push_back(materia);
 
-    std::cout<< "olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
+    std::cout<< "Olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
              <<" no curso de Engenharia da Computação, seu email será:" << aluno_superior::cria_email_academico(aluno1.nome_aluno) << endl;
     alana.print_boletim();
-    cout << aluno1;
+    cout << aluno1<< endl;
+}
+
+void cria_aluno_medio(materia materia ){
+    aluno_ensino_medio aluno1;
+    std::cout<< "Criando um aluno do ensino ensino medio no SUAP2:" << std::endl;
+    std::cout << "digite o nome do aluno: ";
+    std::getchar();
+    std::getline (std::cin,aluno1.nome_aluno);
+    std::cout << "digite a data de nascimento, como o moedelo '12/12/1212': ";
+    std::cin >> aluno1.data_nascimento_aluno;
+    std::cout << "digite seu sexo: [F/M]  ";
+    cin >> aluno1.sexo_aluno;
+    std::cout << "digite seu CPF:  ";
+    string cpf;
+    cin >> cpf;
+    std::cout << "digite sua idade: ";
+    cin >> aluno1.idade_aluno;
+    aluno1.setCPF(cpf);
+    std::cout << "digite seu telefone: ";
+    string telefone;
+    cin >> telefone;
+    aluno1.setTelefone(telefone);
+    aluno1.serie_ensino_medio= "1º ano do ensino médio";
+    aluno1.situacao_aluno = "Ativa";
+    boletim boletim_aluno;
+    boletim_aluno.materias.push_back(materia);
+
+    std::cout<< "Olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
+             <<" no curso de Engenharia da Computação, seu email será:" << aluno_superior::cria_email_academico(aluno1.nome_aluno) << endl;
+    boletim_aluno.print_boletim();
+    cout << aluno1<< endl;
+}
+
+void cria_professor(){
+    professor professor1;
+    cout << "Digite o nome: ";
+    std::getchar();
+    std::getline (std::cin,professor1.nome_professor);
+    cout << "Digite um email: ";
+    cin >> professor1.email;
+    cout << "Professor cadastrado! "<< endl;
+
+}
+
+void cria_curso(){
+    cursos curso;
+    cout << "Digite o nome do curso: ";
+    cin >> curso.nome_curso;
+    cout << "Digite o id do curso: ";
+    cin >> curso.id_curso;
+    cout << "Curso gerado com sucesso! "<< endl;
+}
+
+ void cria_materia(){
+     materia materia;
+     cout <<"Nome da Materia: ";
+     cin >> materia.nome_materia;
+     cout << "Carga horaria: ";
+     cin >> materia.carga_horaria;
+     cout << "Nome do Professor responsavel: ";
+     cin >> materia.professor_responsavel;
+     cout << "Materia gerada com sucesso! "<< endl;
 }
 
 int main(){
@@ -77,6 +139,12 @@ int main(){
     LSA.professor_responsavel = professor2.nome_professor;
     LSA.nome_materia = "Laboratorio de Sistemas Abertos";
 
+    // criando outra matéria
+    materia geologia;
+    geologia.carga_horaria = 62;
+    geologia.professor_responsavel = professor2.nome_professor;
+    geologia.nome_materia = "Geologia";
+
 
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
@@ -100,34 +168,50 @@ int main(){
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░┉┉┉░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
     std::cout<<""<< std::endl;
+//
+//    cout << "=============================================================================================="<< endl;
+//    cout << "----------> [0] CADASTRE UM ALUNO SUPERIOR "<< endl;
+//    cout << "----------> [1] CADASTRE UM ALUNO DO ENSINO MÉDIO"<< endl;
+//    cout << "----------> [2] CADASTRE UM PROFESSOR "<< endl;
+//    cout << "----------> [3] CADASTRE UM CURSO "<< endl;
+//    cout << "----------> [4] CADASTRE UM MATÉRIA "<< endl;
+//    cout << "----------> [5] SAIR DO PROGAMA"<< endl;
+//    cout << "=============================================================================================="<< endl;
 
-    cout << "=============================================================================================="<< endl;
-    cout << "----------> [0] CADASTRE UM ALUNO SUPERIOR "<< endl;
-    cout << "----------> [1] CADASTRE UM ALUNO DO ENSINO MÉDIO"<< endl;
-    cout << "----------> [2] CADASTRE UM PROFESSOR "<< endl;
-    cout << "----------> [3] Sair do programa"<< endl;
-    cout << "=============================================================================================="<< endl;
-    int var;
-    cin >> var;
 
-    switch (var) {
-        case 0:
-            cria_aluno_superior(POO);
-            break;
-        case 1:
-            cout<< "oxe";
-            break;
-        case 2:
-            cout<< "oxe";
-            break;
-        case 3:
-            cout<< "oxe";
-            break;
-
-        default:
-            cout << "Nenhuma opção é válida";
+    while (true) {
+        cout << "=============================================================================================="<< endl;
+        cout << "----------> [0] CADASTRE UM ALUNO SUPERIOR "<< endl;
+        cout << "----------> [1] CADASTRE UM ALUNO DO ENSINO MÉDIO"<< endl;
+        cout << "----------> [2] CADASTRE UM PROFESSOR "<< endl;
+        cout << "----------> [3] CADASTRE UM CURSO "<< endl;
+        cout << "----------> [4] CADASTRE UM MATÉRIA "<< endl;
+        cout << "----------> [5] SAIR DO PROGAMA"<< endl;
+        cout << "=============================================================================================="<< endl;
+        int var;
+        cin >> var;
+        switch (var) {
+            case 0:
+                cria_aluno_superior(POO);
+                break;
+            case 1:
+                cria_aluno_medio(geologia);
+                break;
+            case 2:
+                cria_professor();
+                break;
+            case 3:
+                cria_curso();
+                break;
+            case 4:
+                cria_materia();
+                break;
+            case 5:
+                exit(0);
+            default:
+                cout << "Nenhuma opção é válida";
+        }
     }
-    
 //    std::cout<< "Criando um aluno do ensino superior no SUAP2:" << std::endl;
 //    std::cout << "digite o nome do aluno: ";
 //    std::getchar();

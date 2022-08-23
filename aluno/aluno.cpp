@@ -29,7 +29,7 @@ string aluno::cria_email_academico(string nome)  {
 }
 
 ostream &operator<<(ostream &os, const aluno &a) {
-    os << "===================== INFORMAÇÕES DO ALUNO ====================================="
+    os << "===================== INFORMAÇÕES DO ALUNO =====================================" << std::endl;
     os << "Nome Aluno: " <<a.nome_aluno << "\n";
     os << "Data de Nascimento: "<<a.data_nascimento_aluno << "\n";
     os <<"CPF: "<< a.CPF_aluno << "\n";

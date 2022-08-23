@@ -23,6 +23,5 @@ add_executable(novo_SUAP_2
         main.cpp cursos/cursos.cpp
         cursos/cursos.h
         aluno/aluno.cpp
-        defs.hpp
         includes.h
         )
