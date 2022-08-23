@@ -17,11 +17,7 @@ public:
     //constructor
     aluno_ensino_medio() {;}
 
-    //metodos
-    void setSerie(const string& n_serie);
-    string getSerie() const;
-protected:
-    void mostra_aluno_medio(aluno_ensino_medio aluno);
+
 };
 
 

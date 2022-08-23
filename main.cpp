@@ -7,26 +7,76 @@ using std::endl;
 using std::cin;
 #include <fstream>
 
+void cria_aluno_superior(materia materia ){
+    aluno_superior aluno1;
+    std::cout<< "Criando um aluno do ensino superior no SUAP2:" << std::endl;
+    std::cout << "digite o nome do aluno: ";
+    std::getchar();
+    std::getline (std::cin,aluno1.nome_aluno);
+    std::cout << "digite a data de nascimento, como o moedelo '12/12/1212': ";
+    std::cin >> aluno1.data_nascimento_aluno;
+    std::cout << "digite seu sexo: [F/M]  ";
+    cin >> aluno1.sexo_aluno;
+    std::cout << "digite seu CPF:  ";
+    string cpf;
+    cin >> cpf;
+    std::cout << "digite sua idade: ";
+    cin >> aluno1.idade_aluno;
+    aluno1.setCPF(cpf);
+    std::cout << "digite seu telefone: ";
+    string telefone;
+    cin >> telefone;
+    aluno1.setTelefone(telefone);
+    aluno1.periodo = "1";
+    aluno1.situacao_aluno = "Ativa";
+    boletim alana;
+    alana.materias.push_back(materia);
+
+    std::cout<< "olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
+             <<" no curso de Engenharia da Computação, seu email será:" << aluno_superior::cria_email_academico(aluno1.nome_aluno) << endl;
+    alana.print_boletim();
+    cout << aluno1;
+}
+
 int main(){
 
 //    criando um curso
     cursos engenharia_da_computacao;
-    engenharia_da_computacao.nome_curso = "engenharia_da_computação";
+    engenharia_da_computacao.nome_curso = "Engenharia da Computação";
     engenharia_da_computacao.id_curso = "2456";
+
+    //    criando um curso
+    cursos telematica;
+    telematica.nome_curso = "Telemática";
+    telematica.id_curso = "2478";
+
+    //    criando um curso
+    cursos mineracao;
+    mineracao.nome_curso = "Mineração";
+    mineracao.id_curso = "4565";
+
 
 //    criando um professor
     professor professor1;
     professor1.nome_professor = "Daniel Madalena Marques";
     professor1.email = "daniel@academico.suap2.com.br";
 
+    //    criando um professor
+    professor professor2;
+    professor2.nome_professor = "Daniela Barros";
+    professor2.email = "daniela@academico.suap2.com.br";
 //    criando uma materia
     materia POO;
     POO.carga_horaria = 62;
     POO.professor_responsavel = professor1.nome_professor;
     POO.nome_materia = "Progamação Orientada a Objeto";
 
-// criando um aluno
-    aluno_superior aluno1;
+    // criando outra matéria
+    materia LSA;
+    LSA.carga_horaria = 62;
+    LSA.professor_responsavel = professor2.nome_professor;
+    LSA.nome_materia = "Laboratorio de Sistemas Abertos";
+
 
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
@@ -52,18 +102,17 @@ int main(){
     std::cout<<""<< std::endl;
 
     cout << "=============================================================================================="<< endl;
-    cout << "----------> [0] cadastro de administrador"<< endl;
-    cout << "----------> [1] login de professor"<< endl;
-    cout << "----------> [2] cadastro de aluno"<< endl;
-    cout << "----------> [5] ver o menu novamente"<< endl;
-    cout << "----------> [6] Sair do programa"<< endl;
+    cout << "----------> [0] CADASTRE UM ALUNO SUPERIOR "<< endl;
+    cout << "----------> [1] CADASTRE UM ALUNO DO ENSINO MÉDIO"<< endl;
+    cout << "----------> [2] CADASTRE UM PROFESSOR "<< endl;
+    cout << "----------> [3] Sair do programa"<< endl;
     cout << "=============================================================================================="<< endl;
     int var;
     cin >> var;
 
     switch (var) {
         case 0:
-            cout<< "oxe";
+            cria_aluno_superior(POO);
             break;
         case 1:
             cout<< "oxe";
@@ -74,30 +123,23 @@ int main(){
         case 3:
             cout<< "oxe";
             break;
-        case 4:
-            cout<< "oxe";
-            break;
-        case 5:
-            cout<< "oxe";
-            break;
-        case 6:
-            exit(0);
+
         default:
             cout << "Nenhuma opção é válida";
     }
     
-    std::cout<< "Criando um aluno do ensino superior no SUAP2:" << std::endl;
-    std::cout << "digite o nome do aluno: ";
-    std::getchar();
-    std::getline (std::cin,aluno1.nome_aluno);
-    std::cout << "digite a data de nascimento, como o moedelo '12/12/1212': ";
-    std::cin >> aluno1.data_nascimento_aluno;
-    boletim alana;
-    alana.materias.push_back(POO);
-
-    std::cout<< "olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
-      <<" no curso de Engenharia da Computação, seu email será:" << endl;
-    alana.print_boletim();
-    cout << aluno1;
-    return 0;
+//    std::cout<< "Criando um aluno do ensino superior no SUAP2:" << std::endl;
+//    std::cout << "digite o nome do aluno: ";
+//    std::getchar();
+//    std::getline (std::cin,aluno1.nome_aluno);
+//    std::cout << "digite a data de nascimento, como o moedelo '12/12/1212': ";
+//    std::cin >> aluno1.data_nascimento_aluno;
+//    boletim alana;
+//    alana.materias.push_back(POO);
+//
+//    std::cout<< "olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
+//      <<" no curso de Engenharia da Computação, seu email será:" << endl;
+//    alana.print_boletim();
+//    cout << aluno1;
+//    return 0;
 }

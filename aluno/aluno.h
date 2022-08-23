@@ -25,12 +25,11 @@ public:
     string situacao_aluno;
 
     //funções
-    float getCRE();
-    void setCRE();
-//    int getCPF();
-//    void setCPF();
-//    int getTelefone();
-//    void setTelefone();
+    void setCRE(float cre) ;
+
+    void setCPF(string cpf);
+
+    void setTelefone(string telefone);
     static string cria_email_academico(string nome);
 
 protected:

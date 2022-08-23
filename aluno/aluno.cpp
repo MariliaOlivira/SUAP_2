@@ -29,6 +29,7 @@ string aluno::cria_email_academico(string nome)  {
 }
 
 ostream &operator<<(ostream &os, const aluno &a) {
+    os << "===================== INFORMAÇÕES DO ALUNO ====================================="
     os << "Nome Aluno: " <<a.nome_aluno << "\n";
     os << "Data de Nascimento: "<<a.data_nascimento_aluno << "\n";
     os <<"CPF: "<< a.CPF_aluno << "\n";
@@ -40,12 +41,16 @@ ostream &operator<<(ostream &os, const aluno &a) {
     return os;
 }
 
-float aluno::getCRE() {
-    return this->CRE_aluno;
+void aluno::setCRE(float cre)  {
+    this->CRE_aluno = cre ;
 }
 
-void aluno::setCRE() {
+void aluno::setCPF(string cpf){
+    this->CPF_aluno = cpf;
+}
 
+void aluno::setTelefone(string telefone) {
+    this->telefone_aluno =telefone;
 }
 
 

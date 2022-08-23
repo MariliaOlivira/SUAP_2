@@ -15,8 +15,8 @@ public:
     explicit aluno_superior(){;}
 
     //metodos
-    void setPeriodo(std::string n_periodo);
-    std::string getPeriodo();
+
+    std::string getPeriodo() const;
 };
 
 
