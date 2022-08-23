@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.22)
 project(novo_SUAP_2)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -20,4 +20,9 @@ add_executable(novo_SUAP_2
         materia/materia.h
         boletim/boletim.cpp
         boletim/boletim.h
-        main.cpp cursos/cursos.cpp cursos/cursos.h  aluno/aluno.cpp defs.hpp includes.h)
+        main.cpp cursos/cursos.cpp
+        cursos/cursos.h
+        aluno/aluno.cpp
+        defs.hpp
+        includes.h
+        )

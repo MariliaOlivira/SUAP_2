@@ -22,7 +22,7 @@ int main(){
 //    criando uma materia
     materia POO;
     POO.carga_horaria = 62;
-    POO.professor_responsavel = professor1;
+    POO.professor_responsavel = professor1.nome_professor;
     POO.nome_materia = "Progamação Orientada a Objeto";
 
 // criando um aluno
@@ -53,11 +53,10 @@ int main(){
 
     cout << "=============================================================================================="<< endl;
     cout << "----------> [0] cadastro de administrador"<< endl;
-    cout << "----------> [1] cadastro de professor"<< endl;
+    cout << "----------> [1] login de professor"<< endl;
     cout << "----------> [2] cadastro de aluno"<< endl;
-    cout << "----------> [3] fazer login aluno"<< endl;
-    cout << "----------> [4] fazer login professor"<< endl;
     cout << "----------> [5] ver o menu novamente"<< endl;
+    cout << "----------> [6] Sair do programa"<< endl;
     cout << "=============================================================================================="<< endl;
     int var;
     cin >> var;
@@ -81,10 +80,12 @@ int main(){
         case 5:
             cout<< "oxe";
             break;
+        case 6:
+            exit(0);
+        default:
+            cout << "Nenhuma opção é válida";
     }
-
-
-
+    
     std::cout<< "Criando um aluno do ensino superior no SUAP2:" << std::endl;
     std::cout << "digite o nome do aluno: ";
     std::getchar();
@@ -95,9 +96,8 @@ int main(){
     alana.materias.push_back(POO);
 
     std::cout<< "olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
-      <<" no curso de Engenharia da Computação, seu email será:"<<
-      aluno_superior::cria_email_academico(aluno1.nome_aluno) << std::endl;
+      <<" no curso de Engenharia da Computação, seu email será:" << endl;
     alana.print_boletim();
-
+    cout << aluno1;
     return 0;
 }

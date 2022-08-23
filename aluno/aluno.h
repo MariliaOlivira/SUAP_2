@@ -24,16 +24,23 @@ public:
     string data_nascimento_aluno;
     string situacao_aluno;
 
-    // função responsavel por criar o email academico
+    //funções
+    float getCRE();
+    void setCRE();
+//    int getCPF();
+//    void setCPF();
+//    int getTelefone();
+//    void setTelefone();
     static string cria_email_academico(string nome);
-    void getCRE();
-    string setCRE();
 
-private:
-    float CRE_aluno;
-    int CPF_aluno;
-    string tipo_sanguineo_aluno;
-    int telefone_aluno;
+protected:
+//    atributos privados
+    float CRE_aluno = 0.0;
+    string CPF_aluno = "-";
+    string telefone_aluno = "-";
+
+    // funções privadas
+
 
 };
 

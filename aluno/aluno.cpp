@@ -4,6 +4,7 @@
 #include "aluno.h"
 #include <vector>
 #include <string>
+#include <iostream>
 using std::string;
 
 std::vector<std::string> split(const std::string& text, char sep){
@@ -27,8 +28,26 @@ string aluno::cria_email_academico(string nome)  {
     return nome_aluno += "@academico.suap2.com.br";
 }
 
-ostream &operator<<(ostream &os, const aluno& a) {
-    os << a.nome_aluno<<"\n";
-    os <<a.data_nascimento_aluno;
+ostream &operator<<(ostream &os, const aluno &a) {
+    os << "Nome Aluno: " <<a.nome_aluno << "\n";
+    os << "Data de Nascimento: "<<a.data_nascimento_aluno << "\n";
+    os <<"CPF: "<< a.CPF_aluno << "\n";
+    os << "CRE: "<<a.CRE_aluno << "\n";
+    os << "Idade: "<<a.idade_aluno << "\n";
+    os <<"Sexo: "<< a.sexo_aluno << "\n";
+    os <<"Situação Aluno: "<< a.situacao_aluno << "\n";
+    os <<"Telefone: "<< a.telefone_aluno << "\n";
+    return os;
+}
+
+float aluno::getCRE() {
+    return this->CRE_aluno;
+}
+
+void aluno::setCRE() {
 
 }
+
+
+
+
