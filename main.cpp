@@ -7,7 +7,7 @@ using std::endl;
 using std::cin;
 #include <fstream>
 
-void cria_aluno_superior(materia materia ){
+boletim cria_aluno_superior(materia materia ){
     aluno_superior aluno1;
     std::cout<< "Criando um aluno do ensino superior no SUAP2:" << std::endl;
     std::cout << "digite o nome do aluno: ";
@@ -29,16 +29,18 @@ void cria_aluno_superior(materia materia ){
     aluno1.setTelefone(telefone);
     aluno1.periodo = "1";
     aluno1.situacao_aluno = "Ativa";
-    boletim alana;
-    alana.materias.push_back(materia);
-
+    boletim boletim_aluno;
+    boletim_aluno.alunoSuperior = aluno1;
+    boletim_aluno.materias.push_back(materia);
+    aluno1.email = aluno_superior::cria_email_academico(aluno1.nome_aluno);
     std::cout<< "Olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
-             <<" no curso de Engenharia da Computação, seu email será:" << aluno_superior::cria_email_academico(aluno1.nome_aluno) << endl;
-    alana.print_boletim();
+             <<" no curso de Engenharia da Computação, seu email será:" <<aluno1.email << endl;
+    boletim_aluno.print_boletim();
     cout << aluno1<< endl;
+    return boletim_aluno;
 }
 
-void cria_aluno_medio(materia materia ){
+boletim cria_aluno_medio(materia materia ){
     aluno_ensino_medio aluno1;
     std::cout<< "Criando um aluno do ensino ensino medio no SUAP2:" << std::endl;
     std::cout << "digite o nome do aluno: ";
@@ -61,12 +63,14 @@ void cria_aluno_medio(materia materia ){
     aluno1.serie_ensino_medio= "1º ano do ensino médio";
     aluno1.situacao_aluno = "Ativa";
     boletim boletim_aluno;
+    boletim_aluno.aluno_ensino_meedio = aluno1;
     boletim_aluno.materias.push_back(materia);
-
+    aluno1.email = aluno_superior::cria_email_academico(aluno1.nome_aluno);
     std::cout<< "Olá, " << aluno1.nome_aluno << " bem vindo(a) ao BPFI, você esta matriculado"
-             <<" no curso de Engenharia da Computação, seu email será:" << aluno_superior::cria_email_academico(aluno1.nome_aluno) << endl;
+             <<" no curso de Engenharia de Mineração, seu email será:" << aluno1.email << endl;
     boletim_aluno.print_boletim();
     cout << aluno1<< endl;
+    return boletim_aluno;
 }
 
 void cria_professor(){
@@ -100,6 +104,13 @@ void cria_curso(){
      cout << "Materia gerada com sucesso! "<< endl;
 }
 
+void return_acesso(std::vector<boletim> boletins, string email){
+    for (auto & it : boletins)
+        if(email == it.aluno_ensino_meedio.email ||email == it.alunoSuperior.email)
+            it.print_boletim();
+        else{ it.print_boletim();}
+
+}
 int main(){
 
 //    criando um curso
@@ -168,17 +179,10 @@ int main(){
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░┉┉┉░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
     std::cout<<"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"<< std::endl;
     std::cout<<""<< std::endl;
-//
-//    cout << "=============================================================================================="<< endl;
-//    cout << "----------> [0] CADASTRE UM ALUNO SUPERIOR "<< endl;
-//    cout << "----------> [1] CADASTRE UM ALUNO DO ENSINO MÉDIO"<< endl;
-//    cout << "----------> [2] CADASTRE UM PROFESSOR "<< endl;
-//    cout << "----------> [3] CADASTRE UM CURSO "<< endl;
-//    cout << "----------> [4] CADASTRE UM MATÉRIA "<< endl;
-//    cout << "----------> [5] SAIR DO PROGAMA"<< endl;
-//    cout << "=============================================================================================="<< endl;
 
-
+// recebe alunos cadastrados
+    std::vector<boletim> boletins;
+    string email;
     while (true) {
         cout << "=============================================================================================="<< endl;
         cout << "----------> [0] CADASTRE UM ALUNO SUPERIOR "<< endl;
@@ -186,16 +190,18 @@ int main(){
         cout << "----------> [2] CADASTRE UM PROFESSOR "<< endl;
         cout << "----------> [3] CADASTRE UM CURSO "<< endl;
         cout << "----------> [4] CADASTRE UM MATÉRIA "<< endl;
-        cout << "----------> [5] SAIR DO PROGAMA"<< endl;
+        cout << "----------> [5] LOGIN ALUNO"<< endl;
+        cout << "----------> [6] SAIR DO PROGAMA"<< endl;
         cout << "=============================================================================================="<< endl;
         int var;
         cin >> var;
         switch (var) {
             case 0:
-                cria_aluno_superior(POO);
+                boletins.push_back(cria_aluno_superior(POO));
+
                 break;
             case 1:
-                cria_aluno_medio(geologia);
+                boletins.push_back(cria_aluno_medio(geologia)) ;
                 break;
             case 2:
                 cria_professor();
@@ -207,9 +213,17 @@ int main(){
                 cria_materia();
                 break;
             case 5:
+                cout << "Insira seu email: ";
+                cin >> email;
+                return_acesso(boletins, email);
+                break;
+
+            case 6:
                 exit(0);
+
             default:
                 cout << "Nenhuma opção é válida";
+                break;
         }
     }
 //    std::cout<< "Criando um aluno do ensino superior no SUAP2:" << std::endl;

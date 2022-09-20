@@ -23,6 +23,7 @@ public:
     string sexo_aluno;
     string data_nascimento_aluno;
     string situacao_aluno;
+    string email;
 
     //funções
     void setCRE(float cre) ;

@@ -12,6 +12,9 @@ ostream &operator<<(ostream &out, materia &materia) {
         "Materias referente: " << materia.nome_materia << endl <<
         "Professor Responsavel: " << materia.professor_responsavel << endl <<
         "Carga Horaria: " << materia.carga_horaria << "h"<<endl <<
+        "Sua Primeira nota: " << materia.nota1  <<endl <<
+        "Sua Segunda nota: " << materia.nota2  <<endl <<
+        "Sua Terceira nota: " << materia.nota3  <<endl <<
         "\t\t____________________________________" << endl;
 
     return out;
